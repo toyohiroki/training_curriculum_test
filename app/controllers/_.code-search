@@ -1,0 +1,28 @@
+# Query: =>
+# ContextLines: 1
+
+7 件の結果 - 4 ファイル
+
+app/controllers/calendars_controller.rb:
+  25      @todays_date = Date.today
+  26:     # 例)　今日が2月1日の場合・・・ Date.today.day : 1日
+  27  
+
+  36        end
+  37:       days = { :month : (@todays_date + x).month, :date : (@todays_date+x).day, :plans : today_plans}
+  38        @week_days.push(days)
+
+bin/bundle:
+   99      nil
+  100:   rescue StandardError, LoadError => e
+  101      e
+
+config/environments/development.rb:
+  27      config.public_file_server.headers = {
+  28:       "Cache-Control" => "public, max-age=#{2.days.to_i}"
+  29      }
+
+config/environments/test.rb:
+  21    config.public_file_server.headers = {
+  22:     "Cache-Control" => "public, max-age=#{1.hour.to_i}"
+  23    }
